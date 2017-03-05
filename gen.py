@@ -19,7 +19,7 @@ docpath = './Documents'
 page = open(os.path.join(docpath,'index.html')).read()
 soup = BeautifulSoup(page)
 
-mainbody = soup.find('div', {'class': "markdown-body"})
+mainbody = soup.find('article', {'class': "markdown-body"})
 directives = mainbody.find('a', {'id': "user-content-directives"}).parent.find_next_sibling('ul')
 ngx_apis = mainbody.find('a', {'id': "user-content-nginx-api-for-lua"}).parent.find_next_sibling('ul')
 
